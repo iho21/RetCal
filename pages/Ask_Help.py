@@ -3,14 +3,14 @@ from openai import OpenAI
 import time
 import openai
 
-st.title('ChatGPT Bot')
+st.title('Financial Advisor')
 
 # st.write(st.session_state)
 openai_api_key = st.text_input("OpenAI Key", type="password")
 
 if "messages" not in st.session_state:
     st.session_state["messages"] = [
-        {"role": "system", "content": "You are talking to ChatGPT, an AI model."},
+        {"role": "assistant", "content": "I am your Financial Advisor. I can help you with your financial planning."},
         {"role": "assistant", "content": "How can I assist you today?"}
     ]
 
