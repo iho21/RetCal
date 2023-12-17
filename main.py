@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import requests as rq
 from openai import OpenAI
+import openai
 
 st.title("Retire With FIRE")
 st.caption("Financial indepenendence, retire early")
@@ -33,10 +34,10 @@ if True:
                 response = client.chat.completions.create(model="gpt-3.5-turbo", messages=st.session_state.messages)
                 msg = response.choices[0].message
                 st.session_state.messages.append(msg)
-                # st.chat_message("assistant").write(msg.content)
+                st.chat_message("assistant").write(msg.content)
 
 
-    ## TODO: Add ChatGPT help line. 
+
 
     ## TODO: Take current or planned starting income.
 
